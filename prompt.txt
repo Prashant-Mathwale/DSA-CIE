@@ -1,0 +1,186 @@
+Build a full-stack MERN-style application (React + Node + Express, WITHOUT MongoDB) that demonstrates a File System Organization using a Tree Data Structure with optimized search.
+
+Project Overview:
+Create a web-based file system explorer similar to Windows Explorer or Google Drive. The system should represent directories and files in a hierarchical Tree structure and support insertion, deletion, and search. Instead of MongoDB, use an in-memory Tree combined with JSON file storage for persistence. Implement fast search using HashMap , and ensure each node stores its full path to enable constant-time lookup.
+
+Tech Stack:
+Frontend: React.js
+Backend: Node.js with Express.js
+Storage:
+
+* In-memory Tree (primary)
+* JSON file (filesystem.json) for persistence
+
+Core Data Structure Design:
+
+Each node must store:
+
+* id: unique string
+* name: string
+* type: "file" or "folder"
+* parentId: id
+* path: full path (e.g., /Images/Photos/img1.jpg) ⭐ IMPORTANT
+* children: array of child node IDs
+
+Key Optimization Requirements:
+
+1. Path-Based Constant Time Lookup:
+
+* Maintain a HashMap:
+  Key = full path (e.g., "/Images/Photos/img1.jpg")
+  Value = node reference
+* This ensures O(1) lookup using path directly (NO traversal needed)
+
+2. Name-Based HashMap:
+
+* Key = node name
+* Value = list of nodes (to handle duplicates)
+
+3. Trie for Prefix Search:
+
+* Store all node names
+* Enable fast auto-suggestions
+
+Core Functionalities:
+
+1. Tree Representation:
+
+* Root node = "Root"
+* Hierarchical parent-child structure
+
+2. Insert Operation:
+
+* Add node under parent
+* Construct path:
+  parent.path + "/" + name
+* Update:
+
+  * Tree structure
+  * Path HashMap (O(1) lookup)
+  * Name HashMap
+  * Trie
+* Persist to JSON
+
+3. Delete Operation:
+
+* Recursively delete node and children
+* Remove all entries from:
+
+  * Path HashMap
+  * Name HashMap
+  * Trie
+* Update JSON
+
+4. Search Operations:
+
+A. DFS Search:
+
+* Traverse tree (fallback method)
+
+B. Optimized Search:
+
+1. Path Search:
+   Direct lookup from Path HashMap → O(1)
+
+2. Name Search:
+   Lookup in Name HashMap
+
+3. Prefix Search:
+   Use Trie → O(L)
+
+Example:
+Input: "Pho"
+Output: ["Photos"]
+
+5. Path Navigation:
+
+* Direct access using full path string
+* Example:
+  /Images/Photos/img1.jpg
+
+Backend APIs:
+
+POST /api/create
+
+* Create node
+* Must generate path and update all indexes
+
+DELETE /api/delete/:id
+
+* Recursive deletion
+* Clean all indexes
+
+GET /api/tree
+
+* Return full tree
+
+GET /api/search?name=xyz
+
+* Search using Name HashMap
+
+GET /api/path?path=/Images/Photos/img1.jpg
+
+* O(1) lookup using Path HashMap
+
+GET /api/suggest?prefix=abc
+
+* Trie-based suggestions
+
+JSON Storage:
+
+* Load filesystem.json on server start
+* Save after each insert/delete
+
+Trie Implementation:
+
+* Create Trie class
+* Insert all names
+* Support prefix queries
+
+Frontend (React):
+
+Components:
+
+* TreeView
+* Node
+* SearchBar
+
+Features:
+
+* Expand/collapse folders
+* Add/delete nodes
+* Search with suggestions
+* Display full path of selected node
+
+Sample Data:
+Root
+├── Documents
+│   ├── Resume.docx
+│   ├── Notes.txt
+├── Images
+│   ├── Photos
+│   │   ├── img1.jpg
+│   │   ├── img2.jpg
+│   ├── Screenshots
+│   │   ├── ss1.png
+│   │   ├── ss2.png
+
+Performance Requirements:
+
+* DFS → O(n)
+* Path HashMap → O(1) ⭐ KEY IMPROVEMENT
+* Name HashMap → O(1)
+* Trie → O(L)
+
+Optional Enhancements:
+
+* Rename node (update path recursively)
+* Breadcrumb navigation
+* Highlight search results
+
+Goal:
+Demonstrate Tree-based file system with advanced optimization using:
+
+* Path-based constant-time lookup
+* HashMap indexing
+* Trie-based prefix search

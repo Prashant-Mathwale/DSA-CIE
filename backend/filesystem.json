@@ -1,0 +1,96 @@
+[
+  {
+    "id": "root",
+    "name": "Root",
+    "type": "folder",
+    "parentId": null,
+    "path": "/Root",
+    "children": [
+      "d289766e-cc99-4be6-b63e-281f06ca0a50",
+      "15ea1b3d-2996-47a8-9cdc-87258ce3e594"
+    ]
+  },
+  {
+    "id": "d289766e-cc99-4be6-b63e-281f06ca0a50",
+    "name": "Documents",
+    "type": "folder",
+    "parentId": "root",
+    "path": "/Root/Documents",
+    "children": [
+      "791052e1-f889-42df-bdd3-3253ec352f46",
+      "dd8ba70f-8c0e-4bcb-85dd-77f7225ba074"
+    ]
+  },
+  {
+    "id": "791052e1-f889-42df-bdd3-3253ec352f46",
+    "name": "Resume.docx",
+    "type": "file",
+    "parentId": "d289766e-cc99-4be6-b63e-281f06ca0a50",
+    "path": "/Root/Documents/Resume.docx",
+    "children": []
+  },
+  {
+    "id": "dd8ba70f-8c0e-4bcb-85dd-77f7225ba074",
+    "name": "Notes.txt",
+    "type": "file",
+    "parentId": "d289766e-cc99-4be6-b63e-281f06ca0a50",
+    "path": "/Root/Documents/Notes.txt",
+    "children": []
+  },
+  {
+    "id": "15ea1b3d-2996-47a8-9cdc-87258ce3e594",
+    "name": "Images",
+    "type": "folder",
+    "parentId": "root",
+    "path": "/Root/Images",
+    "children": [
+      "8958a68e-7c8e-454b-acf6-85eab8b03e6e",
+      "d2f4b98e-1bda-4459-a2ca-3f4103d207c6"
+    ]
+  },
+  {
+    "id": "8958a68e-7c8e-454b-acf6-85eab8b03e6e",
+    "name": "Photos",
+    "type": "folder",
+    "parentId": "15ea1b3d-2996-47a8-9cdc-87258ce3e594",
+    "path": "/Root/Images/Photos",
+    "children": [
+      "9c65fd7e-0cd9-4666-943a-c2e1fa74735b"
+    ]
+  },
+  {
+    "id": "9c65fd7e-0cd9-4666-943a-c2e1fa74735b",
+    "name": "img1.jpg",
+    "type": "file",
+    "parentId": "8958a68e-7c8e-454b-acf6-85eab8b03e6e",
+    "path": "/Root/Images/Photos/img1.jpg",
+    "children": []
+  },
+  {
+    "id": "d2f4b98e-1bda-4459-a2ca-3f4103d207c6",
+    "name": "Screenshots",
+    "type": "folder",
+    "parentId": "15ea1b3d-2996-47a8-9cdc-87258ce3e594",
+    "path": "/Root/Images/Screenshots",
+    "children": [
+      "fb6cce51-0922-4063-b0d1-07be9f3a9df3",
+      "72aea909-63b5-40bc-b143-35b0ca327cf1"
+    ]
+  },
+  {
+    "id": "fb6cce51-0922-4063-b0d1-07be9f3a9df3",
+    "name": "ss1.png",
+    "type": "file",
+    "parentId": "d2f4b98e-1bda-4459-a2ca-3f4103d207c6",
+    "path": "/Root/Images/Screenshots/ss1.png",
+    "children": []
+  },
+  {
+    "id": "72aea909-63b5-40bc-b143-35b0ca327cf1",
+    "name": "ss2.png",
+    "type": "file",
+    "parentId": "d2f4b98e-1bda-4459-a2ca-3f4103d207c6",
+    "path": "/Root/Images/Screenshots/ss2.png",
+    "children": []
+  }
+]
