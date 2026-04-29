@@ -7,7 +7,10 @@
     "path": "/Root",
     "children": [
       "d289766e-cc99-4be6-b63e-281f06ca0a50",
-      "15ea1b3d-2996-47a8-9cdc-87258ce3e594"
+      "15ea1b3d-2996-47a8-9cdc-87258ce3e594",
+      "e5a08474-f7ae-4916-9d26-55b45e309f9d",
+      "562b6048-c25f-4f05-bc4b-1dacfd252b63",
+      "35bc066b-b261-42dc-b5b8-2cc454a23f0f"
     ]
   },
   {
@@ -18,7 +21,8 @@
     "path": "/Root/Documents",
     "children": [
       "791052e1-f889-42df-bdd3-3253ec352f46",
-      "dd8ba70f-8c0e-4bcb-85dd-77f7225ba074"
+      "dd8ba70f-8c0e-4bcb-85dd-77f7225ba074",
+      "954f9de7-e4b7-4e69-bc02-12cf2be2d721"
     ]
   },
   {
@@ -91,6 +95,38 @@
     "type": "file",
     "parentId": "d2f4b98e-1bda-4459-a2ca-3f4103d207c6",
     "path": "/Root/Images/Screenshots/ss2.png",
+    "children": []
+  },
+  {
+    "id": "e5a08474-f7ae-4916-9d26-55b45e309f9d",
+    "name": "TestFolder",
+    "type": "folder",
+    "parentId": "root",
+    "path": "/Root/TestFolder",
+    "children": []
+  },
+  {
+    "id": "562b6048-c25f-4f05-bc4b-1dacfd252b63",
+    "name": "Project",
+    "type": "folder",
+    "parentId": "root",
+    "path": "/Root/Project",
+    "children": []
+  },
+  {
+    "id": "35bc066b-b261-42dc-b5b8-2cc454a23f0f",
+    "name": "Code",
+    "type": "folder",
+    "parentId": "root",
+    "path": "/Root/Code",
+    "children": []
+  },
+  {
+    "id": "954f9de7-e4b7-4e69-bc02-12cf2be2d721",
+    "name": "files",
+    "type": "folder",
+    "parentId": "d289766e-cc99-4be6-b63e-281f06ca0a50",
+    "path": "/Root/Documents/files",
     "children": []
   }
 ]

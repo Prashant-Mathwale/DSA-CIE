@@ -4,6 +4,19 @@ const { v4: uuidv4 } = require('uuid');
 //  FileSystemTree – the main in-memory engine
 //  Uses: Tree + Path HashMap (O1) + Name HashMap (O1)
 // ─────────────────────────────────────────────
+// The N-ary Tree Node Structure
+class FileSystemNode {
+  constructor(id, name, type, parentId, path) {
+    this.id = id;
+    this.name = name;
+    this.type = type; // 'folder' or 'file'
+    this.parentId = parentId;
+    this.path = path;
+    this.children = []; // Array to hold child node IDs
+  }
+}
+
+// ─────────────────────────────────────────────
 class FileSystemTree {
   constructor() {
     // Map<id, node>
@@ -17,14 +30,7 @@ class FileSystemTree {
   }
 
   _initRoot() {
-    const root = {
-      id: 'root',
-      name: 'Root',
-      type: 'folder',
-      parentId: null,
-      path: '/Root',
-      children: [],
-    };
+    const root = new FileSystemNode('root', 'Root', 'folder', null, '/Root');
     this._registerNode(root);
   }
 
@@ -78,7 +84,7 @@ class FileSystemTree {
 
     if (this.pathMap[path]) throw new Error(`Node already exists at path: ${path}`);
 
-    const node = { id, name, type, parentId, path, children: [] };
+    const node = new FileSystemNode(id, name, type, parentId, path);
     parent.children.push(id);
     this._registerNode(node);
     return node;
