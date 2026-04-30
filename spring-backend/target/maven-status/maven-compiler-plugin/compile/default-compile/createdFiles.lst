@@ -1,0 +1,4 @@
+com\dsacie\filesystem\model\Node.class
+com\dsacie\filesystem\service\FileSystemService.class
+com\dsacie\filesystem\controller\FileSystemController.class
+com\dsacie\filesystem\FileSystemApplication.class
